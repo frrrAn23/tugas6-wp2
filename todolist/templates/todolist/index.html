@@ -40,6 +40,14 @@
         {% endfor %} {% endif %}
       </div>
 
+      <!-- Tombol Logout -->
+      <div class="mb-3">
+        <form action="{% url 'todolist:logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+      </div>
+
       <!-- tombol untuk ke halaman tambah task -->
       <div>
         <a href="{% url 'todolist:create'  %}" class="btn btn-success">Tambah Baru</a>

@@ -9,6 +9,9 @@ from .models import Task
 # import class TaskForm dari file todo/forms.py
 from .forms import TaskForm
 
+# import untuk keamanan login
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 # # def my_view(request):
 #     return HttpResponse("Belajar CRUD Django")
@@ -103,3 +106,8 @@ def delete_view(request, task_id):
         # Jika data task tidak ditemukan,
         # maka akan di redirect ke halaman 404 (Page not found).
         raise Http404("Task tidak ditemukan.")
+
+@login_required
+def view_tasks(request):
+    tasks = Task.objects.filter(user=request.user)
+    return render(request, 'tasks.html', {'tasks': tasks})
