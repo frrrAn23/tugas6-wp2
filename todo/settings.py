@@ -84,10 +84,10 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_djangotodo',  # Ganti dengan nama database Anda
-        'USER': 'root',           # Ganti dengan username database Anda
-        'PASSWORD': '',   # Ganti dengan password database Anda
-        'HOST': 'localhost',      # atau IP server database Anda
+        'NAME': 'db_djangotodo',  # nama database Anda
+        'USER': 'root',           # username database Anda
+        'PASSWORD': '',   # password database Anda
+        'HOST': 'localhost',      # IP server database Anda
         'PORT': '3306',           # Port default MySQL
     }
 }
