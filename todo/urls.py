@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # add route from todo Application
-    path('todolist/', include('todolist.urls'))
+    path('todolist/', include('todolist.urls')),
+    # Redirect ke todolist
+    path('', RedirectView.as_view(url='/todolist/'))
 ]
